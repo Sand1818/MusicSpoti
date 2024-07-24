@@ -5,6 +5,10 @@ from flask import redirect, render_template
 import spotipy
 
 def analytics(session, client_id, client_secret, redirect_uri, scope):
+    """
+    Displays user analytics including top artists,
+    tracks, albums, and recently played songs.
+    """
     token_info = session.get('token_info', None)
     if not token_info:
         return redirect('/')

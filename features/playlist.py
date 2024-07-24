@@ -5,6 +5,10 @@ import requests
 from bs4 import BeautifulSoup
 
 def playlist(request, session, client_id, client_secret, redirect_uri, scope):
+    """
+    Creates a new playlist with Billboard Top 100 songs based on the provided date.
+    Handles both GET and POST requests.
+    """
     if request.method == 'POST':
         date = request.form['date']
         token_info = session.get('token_info', None)
