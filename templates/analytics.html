@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Analytics</title>
+</head>
+<body>
+    <h1>User Analytics</h1>
+
+    <h2>Top 5 Artists</h2>
+    <img src="data:image/png;base64,{{ artist_graph }}" />
+
+    <h2>Top 5 Songs</h2>
+    <img src="data:image/png;base64,{{ track_graph }}" />
+
+    <h2>Top 5 Albums</h2>
+    <img src="data:image/png;base64,{{ album_graph }}" />
+
+    <h2>Last 5 Recently Played Songs</h2>
+    <ul>
+        {% for name, artist in zip(recent_track_names, recent_track_artists) %}
+            <li>{{ name }} by {{ artist }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
